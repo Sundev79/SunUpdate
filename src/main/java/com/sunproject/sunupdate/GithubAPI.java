@@ -13,6 +13,7 @@ import com.squareup.okhttp.Response;
 
 /**
  * <h3>Class for use githubApi.</h3>
+ * 
  * @author sundev79
  * @version 1.0.0
  * @since 1.0.0
@@ -21,7 +22,7 @@ import com.squareup.okhttp.Response;
 @SuppressWarnings("unused")
 
 public class GithubAPI {
-	
+
 	private Request req;
 	private OkHttpClient client;
 	private Call call;
@@ -29,13 +30,13 @@ public class GithubAPI {
 	private String latestBin, staticJsonFile, latestBinName, releaseVersion;
 	private JSONArray latestAssets;
 	private Release latestRelease;
-	private static boolean isInstancied = false;
 
 	/**
-	 * @param url url exeample : https://api.github.com/repos/sundev79/MinebootLauncher/releases
+	 * @param url url exeample :
+	 *            https://api.github.com/repos/sundev79/MinebootLauncher/releases
 	 * @throws IOException May return an Exception.
 	 */
-	
+
 	public GithubAPI(String url) throws IOException {
 		req = new Request.Builder().url(url).build();
 		client = new OkHttpClient();
@@ -52,7 +53,6 @@ public class GithubAPI {
 			latestRelease = new Release(asset);
 			releaseVersion = (String) githubJson.get("tag_name");
 		}
-		isInstancied = true;
 	}
 
 	public String getJson() {
@@ -65,10 +65,6 @@ public class GithubAPI {
 
 	public Release getLatestRelease() {
 		return this.latestRelease;
-	}
-	
-	public static boolean isInstancied() {
-		return isInstancied;
 	}
 
 }
