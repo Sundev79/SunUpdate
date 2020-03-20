@@ -1,2 +1,2 @@
-# sunupdate
-Library for update Sunproject projects.
+# SunUpdate
+**Library for update Sunproject projects.**
