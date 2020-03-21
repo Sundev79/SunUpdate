@@ -15,7 +15,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub sundev79 Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/sundev79/sunupdate</url>
+			<url>https://maven.pkg.github.com/sundev79/Sundev79-Maven-Packages</url>
 		</repository>
 	</distributionManagement>
 
