@@ -45,9 +45,9 @@ public class DownloadUpdate {
 
             File updateFile = new File(path + ".tmp");
             if (!updateFile.exists()) {
-                updateFile.getParentFile().mkdirs();
+                if (!updateFile.getParentFile().mkdirs()) throw new FileNotFoundException("Unable to create a directory !");
                 try {
-                    updateFile.createNewFile();
+                    if (!updateFile.createNewFile()) throw new FileNotFoundException("Unable to create a file !");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -61,7 +61,6 @@ public class DownloadUpdate {
                     total += count;
                     percent = (total / FileSize) * 100.0;
                     output.write(dataBytes, 0, count);
-                    // System.out.println(Math.round(percent) + " %");
                 }
             }
 
